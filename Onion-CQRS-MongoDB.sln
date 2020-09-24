@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion-CQRS-MongoDB.Api", "Onion-CQRS-MongoDB.Api\Onion-CQRS-MongoDB.Api.csproj", "{D10E0983-861A-4A31-A11C-E3648A8FD4CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion-CQRS-MongoDB.Domain", "Onion-CQRS-MongoDB.Domain\Onion-CQRS-MongoDB.Domain.csproj", "{86D40E29-B6B4-40C1-BEC9-40408E15F394}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D10E0983-861A-4A31-A11C-E3648A8FD4CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10E0983-861A-4A31-A11C-E3648A8FD4CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10E0983-861A-4A31-A11C-E3648A8FD4CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10E0983-861A-4A31-A11C-E3648A8FD4CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D40E29-B6B4-40C1-BEC9-40408E15F394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D40E29-B6B4-40C1-BEC9-40408E15F394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D40E29-B6B4-40C1-BEC9-40408E15F394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D40E29-B6B4-40C1-BEC9-40408E15F394}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EEA7E7E-8269-45BD-8D8A-E382F6ADAFCB}
+	EndGlobalSection
+EndGlobal
