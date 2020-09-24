@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Onion_CQRS_MongoDB.Repository</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Onion-CQRS-MongoDB.Domain\Onion-CQRS-MongoDB.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
