@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Onion_CQRS_MongoDB.Services</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Onion-CQRS-MongoDB.Domain\Onion-CQRS-MongoDB.Domain.csproj" />
+    <ProjectReference Include="..\Onion-CQRS-MongoDB.Repository\Onion-CQRS-MongoDB.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
