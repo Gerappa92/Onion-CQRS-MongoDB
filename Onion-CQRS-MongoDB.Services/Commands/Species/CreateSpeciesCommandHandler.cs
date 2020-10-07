@@ -1,6 +1,6 @@
-﻿using Onion_CQRS_MongoDB.Domain.ValueObjects;
+﻿using Convey.CQRS.Commands;
+using Onion_CQRS_MongoDB.Domain.ValueObjects;
 using Onion_CQRS_MongoDB.Repository.Repositories.Interfaces;
-using Onion_CQRS_MongoDB.Services.Commands.Abstracts;
 using System.Threading.Tasks;
 
 namespace Onion_CQRS_MongoDB.Services.Commands

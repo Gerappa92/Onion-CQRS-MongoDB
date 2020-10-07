@@ -1,4 +1,7 @@
 using Autofac;
+using Convey;
+using Convey.CQRS.Commands;
+using Convey.CQRS.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,12 +32,13 @@ namespace Onion_CQRS_MongoDB.Api
 
             var dbContext = new MongoContext(appsettings.MongoDB.ConnectionString, appsettings.MongoDB.Database);
             services.AddSingleton(typeof(MongoContext), dbContext);
+            ConveyBuilder.Create(services)
+                .AddCommandHandlers().AddInMemoryCommandDispatcher()
+                .AddQueryHandlers().AddInMemoryQueryDispatcher();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterModule(new CommandsModule());
-            builder.RegisterModule(new CommandBusModule());
             builder.RegisterModule(new RepositoryModule());
         }
 

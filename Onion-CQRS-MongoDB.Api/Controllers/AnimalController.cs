@@ -1,22 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Onion_CQRS_MongoDB.Services.CommandBus;
+﻿using Convey.CQRS.Commands;
+using Microsoft.AspNetCore.Mvc;
 using Onion_CQRS_MongoDB.Services.Commands;
 
 namespace Onion_CQRS_MongoDB.Api.Controllers
 {
     public class AnimalController : MainController
     {
-        ICommandBus _commandBus;
+        ICommandDispatcher _commandDispatcher;
 
-        public AnimalController(ICommandBus commandBus)
+        public AnimalController(ICommandDispatcher commandDispatcher)
         {
-            _commandBus = commandBus;
+            _commandDispatcher = commandDispatcher;
         }
 
         [HttpPost]
         public IActionResult Post([FromBody] CreateAnimalCommand command)
         {
-            _commandBus.Send(command);
+            _commandDispatcher.SendAsync(command);
             return Ok();
         }
     }

@@ -1,22 +1,34 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Onion_CQRS_MongoDB.Services.CommandBus;
+﻿using Convey.CQRS.Commands;
+using Convey.CQRS.Queries;
+using Microsoft.AspNetCore.Mvc;
 using Onion_CQRS_MongoDB.Services.Commands;
+using Onion_CQRS_MongoDB.Services.Queries;
+using System.Threading.Tasks;
 
 namespace Onion_CQRS_MongoDB.Api.Controllers
 {
     public class SpeciesController : MainController
     {
-        ICommandBus _commandBus;
+        ICommandDispatcher _commandDispatcher;
+        IQueryDispatcher _queryDispatcher;
 
-        public SpeciesController(ICommandBus commandBus)
+        public SpeciesController(IQueryDispatcher queryDispatcher, ICommandDispatcher commandDispatcher)
         {
-            _commandBus = commandBus;
+            _queryDispatcher = queryDispatcher;
+            _commandDispatcher = commandDispatcher;
+        }
+
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var species = await _queryDispatcher.QueryAsync(new GetAllSpeciesQuery());
+            return Ok(species);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CreateSpeciesCommand command)
+        public async Task<IActionResult> Post([FromBody] CreateSpeciesCommand command)
         {
-            _commandBus.Send(command);
+            await _commandDispatcher.SendAsync(command);
             return Ok();
         }
     }

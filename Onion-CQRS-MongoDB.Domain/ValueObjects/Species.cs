@@ -1,4 +1,5 @@
-﻿using Onion_CQRS_MongoDB.Domain.Exceptions.SpeciesException;
+﻿using MongoDB.Bson;
+using Onion_CQRS_MongoDB.Domain.Exceptions.SpeciesException;
 using Onion_CQRS_MongoDB.Domain.Types;
 using System.Collections.Generic;
 
@@ -6,6 +7,7 @@ namespace Onion_CQRS_MongoDB.Domain.ValueObjects
 {
     public class Species : ValueObject
     {
+        public ObjectId Id;
         public string Name { get; private set; }
         public AnimalClass AnimalClass { get; private set; }
         public ConsumeType ConsumeType { get; private set; }

@@ -1,11 +1,8 @@
 ﻿using MongoDB.Driver;
-using Onion_CQRS_MongoDB.Domain.Entities;
 using Onion_CQRS_MongoDB.Domain.ValueObjects;
 using Onion_CQRS_MongoDB.Repository.Repositories.Abstracts;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Onion_CQRS_MongoDB.Services.Repository
@@ -35,9 +32,9 @@ namespace Onion_CQRS_MongoDB.Services.Repository
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await (await _collection.FindAsync(_ => true)).ToListAsync();
         }
 
         public Task<T> GetAsync(T valueObject)

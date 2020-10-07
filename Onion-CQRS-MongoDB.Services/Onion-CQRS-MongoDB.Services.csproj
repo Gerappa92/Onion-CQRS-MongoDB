@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="Convey.CQRS.Commands" Version="0.4.358" />
+    <PackageReference Include="Convey.CQRS.Queries" Version="0.4.354" />
     <PackageReference Include="MongoDB.Driver" Version="2.11.2" />
   </ItemGroup>
 

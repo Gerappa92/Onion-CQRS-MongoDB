@@ -1,5 +1,5 @@
-﻿using Onion_CQRS_MongoDB.Domain.Types;
-using Onion_CQRS_MongoDB.Services.Commands.Abstracts;
+﻿using Convey.CQRS.Commands;
+using Onion_CQRS_MongoDB.Domain.Types;
 
 namespace Onion_CQRS_MongoDB.Services.Commands
 {

@@ -5,4 +5,8 @@
     <RootNamespace>Onion_CQRS_MongoDB.Domain</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.11.2" />
+  </ItemGroup>
+
 </Project>
